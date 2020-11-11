@@ -1,0 +1,16 @@
+<h1>Flats for Rent</h1>
+<p><%= link_to "Add new flat", new_flat_path  %></p>
+
+<div class="card-group">
+  <% @flats.each do |flat| %>
+  <div class="card mx-1" style="width: 18rem;">
+    <div class="bg-light py-3">
+    <div><%= link_to flat.name, flat_path(flat) %></div>
+    <div> <%= flat.description %></div>
+    <div><%= flat.address %></div>
+    <div><i class="fas fa-users"> <%= flat.number_of_guests  %></i><span><i class="fas fa-euro-sign"></i><%= flat.price_per_night %></div>
+    </div>
+    <div><%= link_to "More Info", flat_path(flat) %></div>
+  </div>
+  <% end %>
+</div>
